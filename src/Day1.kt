@@ -1,4 +1,5 @@
 import java.io.File
+import kotlin.math.abs
 
 
 fun solveDay1() {
@@ -16,6 +17,18 @@ private fun part1() {
         leftList.add(numbers[0].toInt())
         rightList.add(numbers[1].toInt())
     }
+
+    leftList.sort()
+    rightList.sort()
+
+    var distanceSum = 0
+
+    for (i in 0..<input.count()) {
+        val distance = abs(leftList[i]-rightList[i])
+        distanceSum += distance
+    }
+
+    println(distanceSum)
 }
 
 private fun part2() {
